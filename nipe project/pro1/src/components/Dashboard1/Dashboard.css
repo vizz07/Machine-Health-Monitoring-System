@@ -1,0 +1,308 @@
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  overflow-y: auto;   /* ✅ allows vertical scroll */
+  max-height: 100vh;  /* ✅ allows full screen height */
+  box-sizing: border-box;
+  margin-left: 250px;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  font-size: 1rem;
+  color: var(--primary-text);
+  opacity: 0.8;
+}
+
+.machine-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.2rem;
+  padding-top: 0rem;
+  margin-bottom: 2rem;
+  overflow: visible;
+  padding-left: 0rem;
+}
+
+.machine-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  width: 100%;                          /* Changed from fixed 300px to 100% */
+  max-width: 380px;                     /* Set max-width instead */
+  padding-left: 20px;
+  padding-right: 20px;                        /* Simplified padding */
+  min-height: 280px;                    /* Increased height to match image */
+  font-size: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;                 /* For proper positioning */
+  padding-bottom: 2rem;
+  height: 100%;
+}
+
+
+.machine-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .machine-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 10px;
+  min-height: 40px;                     /* Ensure consistent header height */
+}
+
+.machine-name {
+  font-size: 1.1rem;                    /* Slightly smaller to fit better */
+  font-weight: 600;
+  color: var(--primary-text);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 8px;                             /* Gap for icon if present */
+}
+
+.status-indicator {
+  padding: 0.25rem 0.75rem;             /* Adjusted padding */
+  border-radius: 20px;                  /* Smaller border radius */
+  font-size: 0.75rem;                   /* Smaller font size */
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;                      /* Adjusted width */
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.machine-card.normal .status-indicator {
+  background-color: var(--success);
+}
+
+.machine-card.warning .status-indicator {
+  background-color: var(--warning);
+}
+
+.machine-card.critical .status-indicator {
+  background-color: var(--critical);
+}
+
+.gauge-container {
+  display: grid;                        /* Changed to grid for better alignment */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns like in image */
+  gap: 0.8rem;                            /* Consistent gap */
+  margin-bottom: 1.2rem;
+  justify-content: space-between;
+  
+}
+
+.gauge {
+  text-align: center;                   /* Center align each gauge */
+  margin-bottom: 0;
+  flex: 1;                         /* ✅ All gauges take equal width */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;                    /* ✅ Prevent overflow */
+  text-align: center;
+}
+
+.gauge-title {
+  font-size: 0.8rem;                    /* Smaller title */
+  font-weight: 500;
+  color: var(--primary-text);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;            /* Match image style */
+  letter-spacing: 0.5px;
+}
+
+.gauge-value {
+  font-size: 1.3rem;                    /* Prominent value */
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.gauge-bar {
+  height: 8px;                          /* Thinner bar */
+  background-color: var(--gauge-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+  margin: 0 auto;                       /* Center the bar */
+  width: 80%;                           /* Narrower bar */
+}
+
+.gauge-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;                    /* Smaller labels */
+  color: var(--primary-text);
+  opacity: 0.6;
+  margin-top: 0.2rem;
+  padding: 0 10%;                       /* Align with bar width */
+}
+
+/* Chart area at bottom of cards */
+.card-chart {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: auto;                     /* Push to bottom */
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+
+.card-footer {
+  border-top: 1px solid var(--card-border);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--primary-text);
+  opacity: 0.7;
+  margin-top: auto;                     /* Push to bottom */
+}
+
+/* Color coding for different metrics */
+.gauge.voltage .gauge-fill {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.gauge.temperature .gauge-fill {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.gauge.vibration .gauge-fill {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.gauge.voltage .gauge-value {
+  color: #3b82f6;
+}
+
+.gauge.temperature .gauge-value {
+  color: #f59e0b;
+}
+
+.gauge.vibration .gauge-value {
+  color: #10b981;
+}
+
+/* Critical state styling */
+.machine-card.critical .gauge.temperature .gauge-fill {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.machine-card.critical .gauge.temperature .gauge-value {
+  color: #ef4444;
+}
+
+@media (max-width: 1200px) {
+  .machine-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .machine-card {
+    max-width: none;                    /* Remove max-width on smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-content {
+    padding: 1.5rem;
+  }
+  
+  .machine-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1rem;
+    margin-left: 0;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .machine-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .gauge-container {
+    grid-template-columns: 1fr;        /* Stack gauges vertically on mobile */
+    gap: 0.5rem;
+  }
+  
+  .gauge {
+    text-align: left;                   /* Left align on mobile */
+  }
+  
+  .gauge-bar {
+    width: 100%;                        /* Full width bars on mobile */
+  }
+  
+  .gauge-labels {
+    padding: 0;                         /* Remove padding on mobile */
+  }
+  
+  .status-indicator {
+    min-width: 60px;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .machine-card {
+    min-height: 240px;                  /* Reduce height on mobile */
+  }
+}

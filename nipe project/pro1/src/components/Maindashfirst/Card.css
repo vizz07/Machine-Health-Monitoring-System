@@ -1,0 +1,136 @@
+:root {
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --primary-text: #1e293b;
+  --chart-grid: #e2e8f0;
+  --chart-axis: #94a3b8;
+  --chart-line: #818cf8;
+  --chart-dot: #6366f1;
+  --chart-active-dot: #4f46e5;
+}
+
+.dark-theme {
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --primary-text: #e2e8f0;
+  --chart-grid: #334155;
+  --chart-axis: #64748b;
+  --chart-line: #818cf8;
+  --chart-dot: #6366f1;
+  --chart-active-dot: #a5b4fc;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  padding: 1rem;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 00px; /* 🔧 Increase from 300px */
+  word-wrap: break-word;
+  justify-content: space-between;
+  min-height: 450px; 
+  font-size: 0.95rem;       
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap; /* ✅ ADD THIS */
+  gap: 0.5rem;      /* ✅ Optional for breathing space */
+}
+
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  white-space: normal;       /* ✅ allow full name to wrap */
+  overflow: visible;         /* ✅ show everything */
+  text-overflow: unset;      /* ✅ remove ... trimming */
+  word-break: break-word;    /* ✅ wrap long names */
+  flex: 1;                   /* ✅ allow growing */
+}
+
+
+.card-icon {
+  font-size: 1.4rem;
+}
+
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  min-width: auto;
+  text-align: center;
+}
+
+.status-badge.operational { background-color: #10b981; }
+.status-badge.warning { background-color: #f59e0b; }
+.status-badge.critical { background-color: #ef4444; }
+.status-badge.maintenance { background-color: #8b5cf6; }
+
+.gauge-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+.gauge {
+  padding: 0.8rem;
+  background-color: var(--card-border);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.card-body {
+  margin-top: auto;
+}
+
+.card-body label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--primary-text);
+  opacity: 0.8;
+}
+
+body{
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+  padding-left: 20px;
+}

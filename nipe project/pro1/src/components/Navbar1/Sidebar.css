@@ -1,0 +1,237 @@
+/* src/components/Sidebar.css */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 250px;
+  height: calc(100vh - 70px);
+  background-color: #2d3748; /* Default dark theme */
+  color: #e2e8f0;
+  z-index: 900;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+/* Light theme */
+.sidebar:not(.dark) {
+  background-color: #f8fafc;
+  color: #1e293b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.closed {/* src/components/Sidebar.css */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 70px;
+  height: calc(100vh - 90px);
+  background: linear-gradient(180deg, #2c5282, #2b6cb0);
+  color: #e2e8f0;
+  z-index: 900;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow-y: auto;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Light theme */
+.sidebar:not(.dark) {
+  background: linear-gradient(180deg, #ebf8ff, #bee3f8);
+  color: #2d3748;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar-header {
+  padding: 1.8rem 1.5rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar:not(.dark) .sidebar-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-logo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #a3bffa;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.sidebar:not(.dark) .sidebar-logo {
+  color: #4299e1;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #cbd5e0;
+  text-align: center;
+}
+
+.sidebar:not(.dark) .sidebar-title {
+  color: #4a5568;
+}
+
+.sidebar-menu {
+  padding: 1.2rem 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.8rem;
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.sidebar:not(.dark) .sidebar-item {
+  color: #4a5568;
+}
+
+.sidebar-item:hover {
+  
+  transform: translateX(5px);
+}
+
+.sidebar:not(.dark) .sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #2d3748;
+}
+
+.sidebar-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-left: 4px solid #a3bffa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar:not(.dark) .sidebar-item.active {
+  background-color: rgba(66, 153, 225, 0.15);
+  color: #2d3748;
+  border-left: 4px solid #4299e1;
+}
+
+.sidebar-icon {
+  font-size: 1.4rem;
+  margin-right: 1.2rem;
+  display: flex;
+  align-items: center;
+  min-width: 24px;
+}
+
+.sidebar-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+  }
+  
+  .sidebar-item {
+    padding: 0.9rem 1.5rem;
+  }
+}
+  transform: translateX(-100%);
+}
+
+.sidebar-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid #4a5568;
+}
+
+.sidebar:not(.dark) .sidebar-header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sidebar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar:not(.dark) .sidebar-logo {
+  color: #2563eb;
+}
+
+.sidebar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.sidebar:not(.dark) .sidebar-title {
+  color: #4b5563;
+}
+
+.sidebar-menu {
+  padding: 1rem 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar:not(.dark) .sidebar-item {
+  color: #4b5563;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.sidebar:not(.dark) .sidebar-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #1e293b;
+}
+
+.sidebar-item.active {
+  background-color: rgba(96, 165, 250, 0.15);
+  color: #ffffff;
+  border-left: 4px solid #60a5fa;
+}
+
+.sidebar:not(.dark) .sidebar-item.active {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: #1e293b;
+  border-left: 4px solid #2563eb;
+}
+
+.sidebar-icon {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+  }
+  
+  .sidebar-item {
+    padding: 0.8rem 1.2rem;
+  }
+}

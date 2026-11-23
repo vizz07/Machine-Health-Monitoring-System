@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  color: #1e293b;
+  transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+.dark-theme {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+   background-color: var(--primary-bg); 
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  margin-top: 70px;
+    transition: margin-left 0.3s ease;
+}
+
+body{
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .main-container.sidebar-open .dashboard-content {
+  margin-left: 250px;
+}
+
+.main-container.sidebar-closed .dashboard-content {
+  margin-left: 0;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+.app-body {
+  display: flex;
+}
+
+.sidebar-open {
+  margin-left: 250px;
+}
+
+/* When sidebar is closed (70px width) */
+.sidebar-closed {
+  margin-left: 70px;
+}
+
+/* Makes content use remaining width */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.main-content.expanded {
+  margin-left: 200px; /* sidebar width */
+}
+
+.main-content.collapsed {
+  margin-left: 70px; /* collapsed sidebar width */
+}
+
+
+}
